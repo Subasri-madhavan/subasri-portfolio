@@ -1,355 +1,243 @@
 // ============================================================
-// portfolioData.js — Centralized configuration for Md Yusuf's Portfolio
+// portfolioData.js — Centralized configuration for Subasri M's Portfolio
 // All external links, personal info, and content in one place.
 // Update this file to change any content across the entire site.
 // ============================================================
 
 export const personalInfo = {
-  name: "Md Yusuf",
-  firstName: "Md Yusuf",
-  brandName: "Md Yusuf",
-  title: "Full Stack & Java Developer",
-  location: "Bhopal, India",
-  phone: "+91 99396-08743",
+  name: "SUBASRI M",
+  firstName: "Subasri",
+  brandName: "SUBASRI M",
+  title: "Aspiring .NET & React Developer",
+  location: "Erode, Tamil Nadu, India",
+  phone: "+91 93427-05650",
   emails: {
-    primary: "mdyusufcse096@iesuniversity.ac.in",
-    secondary: "yusuf.rgpv@gmail.com",
+    primary: "subadhanu2418@gmail.com",
+    secondary: "skynetsubasri@gmail.com",
   },
   summary:
-    "Aspiring software engineer and motivated B.Tech Computer Science student with solid skills in Java, Spring Boot, React, and Python. Passionate about building scalable full-stack applications with clean architecture and modern tech stacks.",
-  resumeUrl: "/Md_Yusuf_Resume_2026.pdf",
+    "Motivated IT student with 2+ years of internship experience in C#, .NET WinUI 3, and MySQL, and recent hands-on exposure to React front-end development. Delivered production-ready modules for hospital, windmill, and jewellery management systems.",
+  resumeUrl: "/Subasri_M_Resume.pdf",
 };
 
 export const socialLinks = {
-  github: "https://github.com/mdyusuf0",
-  linkedin: "https://linkedin.com/in/mdyusuf0",
-  instagram: "https://instagram.com/heyyusuffff",
+  github: "https://github.com/Subasri-madhavan",
+  linkedin: "https://www.linkedin.com/in/subasrimadhavan",
 };
 
 export const heroContent = {
-  greeting: "Hi, I'm Md Yusuf",
-  titleHighlight: "Full Stack & Java Developer",
+  greeting: "Hi, I'm Subasri M",
+  titleHighlight: "Aspiring .NET & React Developer",
   subtitle:
-    "I build fast, scalable applications using Java, Spring Boot, MERN Stack, and Python.",
+    "I build clean, real-world software solutions using C#, .NET WinUI 3, MySQL, and React.",
   ctaPrimary: { text: "View My Work", href: "#projects" },
   ctaSecondary: {
     text: "Contact Me",
-    href: "mailto:mdyusufcse096@iesuniversity.ac.in?subject=Hiring Inquiry – Portfolio&body=Hello Md Yusuf,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
+    href: "mailto:subadhanu2418@gmail.com?subject=Hiring Inquiry – Portfolio&body=Hello Subasri,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
   },
-  ctaResume: { text: "Download Resume", href: "/Md_Yusuf_Resume_2026.pdf" },
+  ctaResume: { text: "Download Resume", href: "/Subasri_M_Resume.pdf" },
 };
 
 export const aboutContent = {
   heading: "Hello!",
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Md Yusuf</span>, an aspiring software engineer based in Bhopal, India, dedicated to crafting clean, functional, and highly scalable full-stack applications.`,
-  techStack: ["Java", "Spring Boot", "MERN Stack"],
+  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Subasri M</span>, a motivated IT student based in Erode, Tamil Nadu, with 2+ years of internship experience building production-ready modules for hospital, windmill, and jewellery management systems — and recent hands-on experience in React front-end development.`,
+  techStack: ["C#", ".NET WinUI 3", "React", "MySQL"],
 };
 
 export const skillsContent = {
   badge: "My Process",
   heading: "Here's how I turn ideas into real-world applications",
   description:
-    "I follow a structured, creative, and highly technical approach to turn ideas into robust full-stack applications.",
+    "I follow a structured, practical approach to building clean, working software — from business logic and database integration to responsive, user-friendly interfaces.",
   cards: [
     {
       number: "01",
-      title: "Research",
-      text: "I start by understanding goals, user requirements, and technical constraints to lay a rock-solid foundation for the project.",
+      title: "Understand",
+      text: "I start by understanding the business requirements and real-world workflows the software needs to support.",
     },
     {
       number: "02",
       title: "Design",
-      text: "Crafting clean architecture, intuitive interfaces, and pixel-perfect wireframes that guarantee an engaging and accessible user experience.",
+      text: "Planning database structure and application logic before writing code, so features integrate cleanly.",
     },
     {
       number: "03",
       title: "Develop",
-      text: "Building scalable backends and responsive frontends using modern tech stacks and best practices.",
+      text: "Building features and UI using C#, .NET WinUI 3, MySQL, and React, with attention to clean, maintainable code.",
     },
     {
       number: "04",
-      title: "Deploy",
-      text: "Rigorous testing, performance optimization, and seamless deployment to cloud infrastructure, followed by ongoing support.",
+      title: "Deliver",
+      text: "Testing, refining, and shipping production-ready modules used in real hospital, windmill, and jewellery management systems.",
     },
   ],
   endText: "Ready to ship!",
 };
 
-// Brand New Technical Skills Data
+// Technical Skills Data (based on resume's Technical Skills section)
 export const technicalSkills = {
   categories: [
     {
-      title: "Programming Languages",
+      title: "Languages",
       skills: [
-        { name: "Java", level: 90 },
-        { name: "C++", level: 85 },
-        { name: "Python", level: 75 }
-      ]
+        { name: "C#", level: 85 },
+        { name: "JavaScript", level: 80 },
+        { name: "HTML", level: 90 },
+        { name: "CSS", level: 88 },
+      ],
     },
     {
-      title: "Full Stack",
+      title: "Frameworks / Libraries",
       skills: [
-        { name: "MERN Stack", level: 90 },
-        { name: "HTML", level: 95 },
-        { name: "CSS", level: 90 },
-        { name: "JavaScript", level: 92 }
-      ]
+        { name: ".NET", level: 85 },
+        { name: "WinUI 3", level: 80 },
+        { name: "React", level: 75 },
+      ],
     },
     {
-      title: "Backend",
-      skills: [
-        { name: "Spring Boot", level: 88 },
-        { name: "FastAPI", level: 75 },
-        { name: "REST APIs", level: 90 }
-      ]
+      title: "Database",
+      skills: [{ name: "MySQL", level: 82 }],
     },
     {
-      title: "Databases",
+      title: "Tools & Platforms",
       skills: [
-        { name: "MongoDB", level: 88 },
-        { name: "MySQL", level: 85 },
-        { name: "Firebase", level: 80 }
-      ]
+        { name: "Git", level: 80 },
+        { name: "AWS", level: 65 },
+        { name: "Visual Studio", level: 85 },
+        { name: "VS Code", level: 90 },
+        { name: "DB Browser", level: 78 },
+      ],
     },
-    {
-      title: "Tools & Automation",
-      skills: [
-        { name: "Git & GitHub", level: 90 },
-        { name: "VS Code", level: 95 },
-        { name: "Postman", level: 88 },
-        { name: "n8n", level: 82 },
-        { name: "MongoDB Compass", level: 85 },
-        { name: "Antigravity", level: 80 },
-        { name: "Codex", level: 75 }
-      ]
-    },
-    {
-      title: "Computer Science Concepts",
-      skills: [
-        { name: "Data Structures", level: 88 },
-        { name: "Algorithms", level: 85 },
-        { name: "DBMS", level: 86 },
-        { name: "OOP", level: 90 },
-        { name: "Software Engineering", level: 84 }
-      ]
-    }
-  ]
+  ],
 };
 
-// Brand New Content Creation Data
-export const contentCreation = {
-  badge: "Cinematic Content",
-  heading: "Creative Direction & Cinematic Edits",
-  description: "Beyond coding, I craft visual stories with premium editing, color grading, and creative pacing.",
-  categories: [
-    {
-      title: "Cinematic Reels",
-      description: "Visual stories crafted with cinematic lighting, premium color grading, and high-impact sound design.",
-      stats: "50+ Reels Created",
-      icon: "🎥"
-    },
-    {
-      title: "Travel Videos",
-      description: "Immersive travel vlogs and aesthetic edits capturing cultures, landscapes, and visual rhythms.",
-      stats: "15+ Countries/Cities",
-      icon: "✈️"
-    },
-    {
-      title: "Educational Reels",
-      description: "Fast-paced tech tutorials and educational content designed to simplify coding and software engineering.",
-      stats: "100k+ Views",
-      icon: "🧠"
-    },
-    {
-      title: "My Own Creative Edits",
-      description: "Experimental transitions, 3D overlays, and trendsetting visual effects that push creative bounds.",
-      stats: "Personal Projects",
-      icon: "⚡"
-    }
-  ]
-};
-
-// Brand New Leadership Data
-export const leadershipList = [
-  {
-    title: "IEEE Madhya Pradesh Section (Social Media Team)",
-    description: "Managed and coordinated digital content, driving audience engagement and designing interactive visual campaigns for tech events.",
-    role: "Social Media Coordinator",
-    badge: "Volunteer"
-  },
-  {
-    title: "Team Coordinator – Go-Kart International Racing 2K25",
-    description: "Led multi-disciplinary teams in project management, budget control, and logistics coordination for a high-profile international racing event.",
-    role: "Team Coordinator",
-    badge: "Leadership"
-  },
-  {
-    title: "5-Day MOE IDE Bootcamp, Roorkee",
-    description: "Participated in an intensive Innovation, Design, and Entrepreneurship Bootcamp organized by the Ministry of Education at IIT Roorkee.",
-    role: "Bootcamp Graduate",
-    badge: "Innovation"
-  },
-  {
-    title: "Hosted INFORIA Tech Summit Hackathon",
-    description: "Organized and hosted the flagship hackathon, managing registrations, mentoring participant teams, and coordinating judge evaluations.",
-    role: "Hackathon Organizer",
-    badge: "Co-Curricular"
-  },
-  {
-    title: "Event Coordinator & Anchoring – INFORIA 2K25",
-    description: "Coordinated technical events and served as the main stage anchor, speaking in front of large crowds and managing the summit flow.",
-    role: "Stage Anchor & Coordinator",
-    badge: "Public Speaking"
-  }
-];
-
-// Brand New Internships Data
+// Experience Data (from resume's EXPERIENCE section)
 export const internshipsList = [
   {
-    organization: "Netlink, Bhopal",
-    role: "Data Analytics & BI Tools Intern",
-    duration: "June 2025 - August 2025",
-    skills: ["Data Analytics", "Business Intelligence", "Dashboard Design", "Data Modeling"],
-    tech: ["Lumenore", "MySQL", "Excel", "BI Tools"]
+    organization: "Skynetbee Artificial Intelligence Pvt. Ltd.",
+    role: "Software Development Intern",
+    duration: "2 Years",
+    skills: [
+      "Business Logic",
+      "Database Integration",
+      "Feature Enhancements",
+    ],
+    tech: ["C#", ".NET WinUI 3", "MySQL"],
+    highlights: [
+      "Built Billing & Bed Management modules for SSS Super Speciality Hospital.",
+      "Created Wind Master module for a Windmill Management System.",
+      "Developed Purchase Management module for a Jewellery Management System.",
+    ],
   },
   {
-    organization: "Canva",
-    role: "Visual Content Creator & Designer",
-    duration: "May 2024 - June 2024",
-    skills: ["Visual Designing", "Poster Design", "Team Branding", "Asset Creation"],
-    tech: ["Canva Pro", "Figma", "Canva Design Suite"]
+    organization: "BRU Internship Program",
+    role: "React App Development Intern",
+    duration: "",
+    skills: ["State Management", "Component Lifecycle", "Responsive UI"],
+    tech: ["React", "HTML", "CSS", "JavaScript"],
+    highlights: [
+      "Built reusable React components and responsive UI for web application modules.",
+      "Worked with state management, props, and component lifecycle in live projects.",
+      "Gained practical front-end development experience through end-to-end project delivery.",
+    ],
   },
-  {
-    organization: "CollegeTips.in",
-    role: "Web Development Intern",
-    duration: "1 Month (Offline)",
-    skills: ["Frontend Development", "Responsive Layouts", "API Testing", "Web Performance"],
-    tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"]
-  }
 ];
 
-// Brand New Soft Skills Data
+// Achievements & Additional Knowledge (from resume)
+export const achievementsList = [
+  {
+    title: "Most Promising Developer Award",
+    description: "Recognised for outstanding internship contributions.",
+    badge: "Award",
+  },
+  {
+    title: "1st Prize – Short Film Hackathon",
+    description: "Won first place for creative editing and acting.",
+    badge: "Hackathon",
+  },
+  {
+    title: "1st Prize – Trading Hackathon",
+    description: "Won first place in a trading-focused hackathon.",
+    badge: "Hackathon",
+  },
+];
+
 export const softSkillsList = [
-  { name: "Leadership", icon: "👑", desc: "Guiding teams, managing tasks, and driving project completion with shared vision." },
-  { name: "Public Speaking", icon: "🎤", desc: "Confident stage presence, anchoring summits, and delivering articulate technical ideas." },
-  { name: "Team Collaboration", icon: "🤝", desc: "Collaborating across fields, building racing carts, and engineering code in sync." },
-  { name: "Communication", icon: "💬", desc: "Clear, concise, and structured interactions in both business and technical contexts." },
-  { name: "Problem Solving", icon: "🧩", desc: "Breaking down complex engineering tasks into clean, logical, and modular pieces." },
-  { name: "Adaptability", icon: "🌟", desc: "Quick to pick up new frameworks like FastAPI, Spring Boot, or automation tools like n8n." },
-  { name: "Creativity", icon: "🎨", desc: "Blending cinematic aesthetics with software structure to build premium experiences." },
-  { name: "Time Management", icon: "⏰", desc: "Balancing B.Tech studies, event hosting, and developing robust software platforms." }
+  { name: "Problem Solving", icon: "🧩", desc: "Breaking down real-world business logic into clean, working modules." },
+  { name: "Adaptability", icon: "🌟", desc: "Moved from C#/.NET development into React front-end work with ease." },
+  { name: "Communication", icon: "💬", desc: "Clear collaboration across internship teams and live projects." },
+  { name: "Creativity", icon: "🎨", desc: "Applies a creative eye through content creation and video editing in DaVinci Resolve." },
 ];
 
 export const projects = [
   {
-    id: "foodmesh",
+    id: "shopvibe-cart",
     number: "01",
-    badge: "🚀 Flagship Project",
-    title: "FoodMesh",
+    badge: "🚀 Featured Project",
+    title: "ShopVibe Cart",
     description:
-      "FoodMesh — An enterprise-grade multi-tenant restaurant management and food ordering SaaS platform inspired by UrbanPiper. It enables restaurants to manage multiple outlets, menus, inventory, customers, staff, and orders through a scalable architecture with secure authentication, role-based access control, and real-time operations. Built with React, Next.js, NestJS, PostgreSQL, Redis, Kafka, Elasticsearch, Docker, Kubernetes, and AWS.",
-    techTags: [
-      "React",
-      "Next.js",
-      "NestJS",
-      "PostgreSQL",
-      "Redis",
-      "Kafka",
-      "Elasticsearch",
-      "Docker",
-      "Kubernetes",
-      "AWS",
-    ],
+      "A responsive e-commerce web app with product search, category filtering, cart, and wishlist functionality. Deployed on Netlify with a clean, mobile-friendly UI built using React component architecture.",
+    techTags: ["React", "HTML", "CSS", "JavaScript"],
     links: {
-      github: "https://github.com/ersamirsingh/UrbanPiper",
-      demo: null,
+      github: "https://github.com/Subasri-madhavan/shopvibe-cart",
+      demo: "https://shopvibecart.netlify.app/",
     },
     isFlagship: true,
   },
   {
-    id: "karigar",
+    id: "hospital-billing",
     number: "02",
     badge: null,
-    title: "Karigar",
+    title: "Hospital Billing & Bed Management System",
     description:
-      "A platform connecting local skilled workers with customers, featuring real-time search, worker profiles, and booking management with full database integration.",
-    techTags: ["React", "Node.js", "MongoDB", "Express", "REST API"],
-    links: {
-      github: "https://github.com/mdyusuf0/Karigar",
-      frontendDemo: "https://karigar-frontend.onrender.com",
-      backendApi: "https://karigar-zny2.onrender.com",
-    },
+      "Billing and bed management modules built for SSS Super Speciality Hospital, handling business logic and database integration in a .NET developer environment.",
+    techTags: ["C#", ".NET WinUI 3", "MySQL"],
+    links: {},
     isFlagship: false,
   },
   {
-    id: "sentiment-analysis",
+    id: "windmill-management",
     number: "03",
     badge: null,
-    title: "AI-Powered Sentiment Analysis",
+    title: "Windmill Management System (Wind Master Module)",
     description:
-      "A full-stack web application that analyzes citizen feedback using Artificial Intelligence to classify sentiments as positive, negative, or neutral. Features a responsive React frontend, a Node.js backend, MongoDB for data storage, and n8n automation for workflow orchestration — enabling real-time insights and efficient feedback management.",
-    techTags: ["React", "Node.js", "MongoDB", "n8n", "AI/ML", "REST API"],
-    links: {
-      github: "#", // Update when available
-    },
+      "The Wind Master module for a Windmill Management System, built to handle core business logic and data operations.",
+    techTags: ["C#", ".NET WinUI 3", "MySQL"],
+    links: {},
+    isFlagship: false,
+  },
+  {
+    id: "jewellery-purchase-management",
+    number: "04",
+    badge: null,
+    title: "Jewellery Purchase Management System",
+    description:
+      "A Purchase Management module developed for a Jewellery Management System, covering business logic and database integration.",
+    techTags: ["C#", ".NET WinUI 3", "MySQL"],
+    links: {},
     isFlagship: false,
   },
 ];
 
-export const certificates = {
-  featured: [
-    {
-      name: "Oracle Cloud Infrastructure 2025",
-      issuer: "Oracle",
-      icon: "☁️",
-    },
-    {
-      name: "Programming in Java (94%)",
-      issuer: "NPTEL",
-      icon: "☕",
-    },
-    {
-      name: "C Programming & Assembly Language",
-      issuer: "NPTEL",
-      icon: "⚙️",
-    },
-    {
-      name: "Technology Job Simulation",
-      issuer: "Deloitte",
-      icon: "💼",
-    },
-    {
-      name: "Career Edge – IT Primer",
-      issuer: "TCS iON",
-      icon: "🎓",
-    },
-    {
-      name: "Fundamentals of BI & Analytics",
-      issuer: "Lumenore",
-      icon: "📊",
-    },
-  ],
-  viewAllUrl:
-    "https://drive.google.com/file/d/1ObdGWtVSx8SsfR4AcbCySSd9LFXcAs9f/view?usp=sharing",
+export const education = {
+  degree: "B.Sc. Information Technology",
+  institution: "RD National College of Arts and Science, Bharathiar University",
+  duration: "2024 – 2027 (3rd Year, Pursuing)",
 };
 
-export const education = {
-  degree: "B.Tech – Computer Science & Engineering",
-  institution: "IES College of Technology (RGPV)",
-  cgpa: "8.35",
-  graduation: "2027",
-  twelfth: "12th Science – 81%",
-  tenth: "10th CBSE – 70%",
+export const additionalKnowledge = {
+  knowledge: ["Trading", "PC Building", "Content Creation", "DaVinci Resolve Video Editing"],
+  interests: ["Artificial Intelligence", "Software Development", "Technology Exploration", "Sci-Fi Movies"],
 };
 
 export const footerContent = {
   taglines: [
-    "Software Engineering & Web Dev",
-    "Java · Spring Boot · React",
+    "Software Development & Web Dev",
+    "C# | .NET WinUI 3 | React",
     "Full Stack Applications",
   ],
-  credential: "B.Tech CSE · CGPA 8.35",
-  copyright: `© ${new Date().getFullYear()} Md Yusuf | Built with React`,
+  credential: "B.Sc. IT | RD National College of Arts and Science",
+  copyright: `© ${new Date().getFullYear()} Subasri M | Built with React`,
 };
 
 // EmailJS Configuration
