@@ -6,6 +6,7 @@ import { heroContent, socialLinks } from '../data/portfolioData';
 
 const Hero = () => {
   const videoRef = useRef(null);
+  const sectionRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
@@ -14,8 +15,47 @@ const Hero = () => {
       once: true,
       easing: 'ease-out'
     });
-    // Video does NOT autoplay anymore
   }, []);
+
+  // When the video finishes, stop it and reset to the start
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+      video.currentTime = 0;
+    };
+
+    video.addEventListener('ended', handleEnded);
+    return () => video.removeEventListener('ended', handleEnded);
+  }, []);
+
+  // Pause when the Hero section scrolls out of view, resume when it scrolls back in
+  // (only if it was already playing before the user left)
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (isPlaying) {
+            video.play();
+          }
+        } else {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [isPlaying]);
 
   const toggleVideo = (e) => {
     e.stopPropagation();
@@ -31,11 +71,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Background Video */}
+    <section id="home" ref={sectionRef} className="relative w-full h-screen overflow-hidden bg-black">
+      {/* Background Video - no loop, stops when it ends */}
       <video
         ref={videoRef}
-        loop
         muted={false}
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -44,7 +83,8 @@ const Hero = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Left Floating Social Bar for Large Screens */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-violet-950/30 via-transparent to-indigo-950/40 pointer-events-none"></div>
+
       <div className="hidden lg:flex flex-col gap-6 fixed left-6 top-1/2 -translate-y-1/2 z-50 mix-blend-difference">
         <a 
           href={socialLinks.github} 
@@ -70,12 +110,9 @@ const Hero = () => {
         </a>
       </div>
 
-      {/* Content Container */}
       <div className="absolute inset-0 z-20 px-6 pb-20 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-start md:items-end text-left w-full">
         
-        {/* Left Side: Text and Buttons */}
         <div className="flex flex-col items-start text-left max-w-2xl w-full">
-          {/* Mobile / Hero inline socials */}
           <div 
             data-aos="fade-up"
             data-aos-delay="100"
@@ -89,15 +126,13 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Main Heading */}
           <h1 
             data-aos="fade-up"
             className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
           >
-            {heroContent.greeting}, <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black]">{heroContent.titleHighlight}</span>
+            {heroContent.greeting}, <br /> <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">{heroContent.titleHighlight}</span>
           </h1>
 
-          {/* Subheading */}
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
@@ -106,13 +141,11 @@ const Hero = () => {
             {heroContent.subtitle}
           </p>
 
-          {/* Buttons */}
           <div 
             data-aos="fade-up"
             data-aos-delay="400"
             className="flex flex-row flex-wrap items-center gap-3 w-full"
           >
-            {/* Primary Button */}
             <a 
               href={heroContent.ctaPrimary.href}
               className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md"
@@ -120,7 +153,6 @@ const Hero = () => {
               {heroContent.ctaPrimary.text}
             </a>
             
-            {/* Secondary Button - Glassmorphism style */}
             <a 
               href={heroContent.ctaSecondary.href}
               className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md"
@@ -128,7 +160,6 @@ const Hero = () => {
               {heroContent.ctaSecondary.text}
             </a>
 
-            {/* Resume Download Button */}
             <a 
               href={heroContent.ctaResume.href}
               download
@@ -142,21 +173,18 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side: Play Video Button */}
         <div 
           data-aos="zoom-in"
           data-aos-delay="600"
           className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
           onClick={toggleVideo}
         >
-          <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/20 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-[#ff2a2a] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(255,42,42,0.6)]">
+          <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/20 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-violet-600 group-hover:to-blue-600 transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(139,92,246,0.6)]">
             {!isPlaying ? (
-              // Play Icon
               <svg className="w-5 h-5 md:w-8 md:h-8 text-white ml-0.5 md:ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
             ) : (
-              // Pause Icon
               <svg className="w-5 h-5 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
               </svg>
@@ -168,7 +196,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div 
         data-aos="fade-up"
         data-aos-delay="800"
@@ -176,7 +203,7 @@ const Hero = () => {
       >
         <div className="animate-bounce">
           <svg 
-            className="w-6 h-6 text-black drop-shadow-[0_1px_2px_rgba(255,255,255,0.6)]" 
+            className="w-6 h-6 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]" 
             fill="none" 
             strokeLinecap="round" 
             strokeLinejoin="round" 

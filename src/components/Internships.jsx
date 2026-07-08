@@ -18,11 +18,10 @@ const InternshipCard = ({ intern, index }) => (
       <h3 className="text-white text-2xl font-black mb-1 tracking-tight">
         {intern.role}
       </h3>
-      <p className="text-red-200 text-sm font-black tracking-wide mb-6 uppercase">
+      <p className="text-violet-200 text-sm font-black tracking-wide mb-6 uppercase">
         {intern.organization}
       </p>
 
-      {/* Skills gained */}
       <div className="mb-6">
         <h4 className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2">Skills Gained:</h4>
         <ul className="text-white/90 text-sm font-medium space-y-1 pl-4 list-disc">
@@ -33,7 +32,6 @@ const InternshipCard = ({ intern, index }) => (
       </div>
     </div>
 
-    {/* Technologies used */}
     <div className="pt-4 border-t border-white/10">
       <h4 className="text-white/60 text-xs font-bold uppercase tracking-wider mb-3">Technologies:</h4>
       <div className="flex flex-wrap gap-2">
@@ -52,9 +50,8 @@ const InternshipCard = ({ intern, index }) => (
 
 const Internships = () => {
   return (
-    <section id="experience" className="bg-[#ff2a2a] pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans">
+    <section id="experience" className="bg-gradient-to-br from-violet-800 via-purple-800 to-indigo-900 pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       
-      {/* Torn paper divider at top */}
       <div className="absolute top-0 left-0 w-full pointer-events-none z-10 transform -translate-y-[1px] rotate-180">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-20 fill-[#0a0a0a]">
           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z"></path>
@@ -63,17 +60,15 @@ const Internships = () => {
 
       <div className="max-w-6xl mx-auto relative z-20">
         
-        {/* Header */}
         <div data-aos="fade-up" className="mb-16 md:mb-20 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tight uppercase">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight uppercase">
             Work Experience
           </h2>
-          <p className="text-red-100 text-base md:text-lg font-semibold max-w-lg mx-auto">
+          <p className="text-violet-100 text-base md:text-lg font-semibold max-w-lg mx-auto">
             Practical internships where I applied software principles and built real-world assets.
           </p>
         </div>
 
-        {/* Internship Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
           {internshipsList.map((intern, index) => (
             <InternshipCard key={intern.organization} intern={intern} index={index} />
@@ -82,8 +77,7 @@ const Internships = () => {
 
       </div>
 
-      {/* Decorative stars */}
-      <div className="absolute bottom-10 left-10 text-black opacity-20 animate-pulse">
+      <div className="absolute bottom-10 left-10 text-white opacity-20 animate-pulse">
         <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z"/></svg>
       </div>
     </section>

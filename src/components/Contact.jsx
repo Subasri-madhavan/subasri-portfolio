@@ -5,19 +5,18 @@ import { emailjsConfig, personalInfo } from '../data/portfolioData';
 const Contact = () => {
   const ref = useRef(null);
   const formRef = useRef(null);
-  const [status, setStatus] = useState('idle'); // idle, sending, success, error
+  const [status, setStatus] = useState('idle');
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
   
-  // Parallax translation for the big text
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "30%"]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (status === 'sending') return; // Prevent duplicate submissions
+    if (status === 'sending') return;
 
     setStatus('sending');
 
@@ -27,14 +26,12 @@ const Contact = () => {
     const email = form.querySelector('#email')?.value || '';
     const message = form.querySelector('#message')?.value || '';
 
-    // Validate inputs
     if (!firstName.trim() || !email.trim() || !message.trim()) {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
       return;
     }
 
-    // Check if EmailJS is configured (checking both placeholder values and falsy states)
     const isConfigured = 
       emailjsConfig.serviceId && 
       emailjsConfig.serviceId !== 'YOUR_EMAILJS_SERVICE_ID' &&
@@ -44,7 +41,6 @@ const Contact = () => {
       emailjsConfig.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY';
 
     if (!isConfigured) {
-      // EmailJS not configured — fallback to prefilled mailto
       const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=Portfolio Contact from ${firstName} ${lastName}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
       window.open(mailtoLink, '_blank');
       setStatus('success');
@@ -53,7 +49,6 @@ const Contact = () => {
       return;
     }
 
-    // EmailJS integration
     try {
       const emailjs = await import('@emailjs/browser');
       await emailjs.sendForm(
@@ -74,7 +69,6 @@ const Contact = () => {
 
   return (
     <section ref={ref} id="contact" className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-gray-900">
-      {/* Huge Background Text */}
       <motion.div 
         style={{ y }}
         className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-16 md:pt-12"
@@ -87,11 +81,10 @@ const Contact = () => {
         </h1>
       </motion.div>
 
-      {/* Form Card Overlay */}
       <div className="relative z-10 w-full flex justify-end items-end">
         <div 
           data-aos="fade-up"
-          className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
+          className="bg-gradient-to-br from-violet-800 via-purple-800 to-indigo-900 w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
         >
           <div className="flex flex-col sm:flex-row justify-between items-start gap-8 mb-12">
             <div className="text-xs font-bold tracking-[0.2em] uppercase opacity-90">
@@ -99,7 +92,7 @@ const Contact = () => {
             </div>
             <a 
               href={`mailto:${personalInfo.emails.primary}`}
-              className="flex items-center gap-2 text-xs font-black uppercase tracking-wider bg-white/10 hover:bg-white hover:text-red-600 border border-white/20 px-4 py-2 rounded-full transition-all duration-300"
+              className="flex items-center gap-2 text-xs font-black uppercase tracking-wider bg-white/10 hover:bg-white hover:text-violet-700 border border-white/20 px-4 py-2 rounded-full transition-all duration-300"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-18 8h18a2 2 0 002-2V8a2 2 0 00-2-2H3a2 2 0 00-2 2v6a2 2 0 002 2z" />
@@ -110,7 +103,6 @@ const Contact = () => {
 
           <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-12 md:gap-16 w-full">
             <div className="flex flex-col md:flex-row gap-12 md:gap-20 w-full">
-              {/* Left Column */}
               <div className="flex-1 flex flex-col gap-10">
                 <div className="relative">
                   <input 
@@ -143,7 +135,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Right Column */}
               <div className="flex-1 flex flex-col">
                 <div className="relative h-full flex flex-col">
                   <textarea 
@@ -157,9 +148,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Bottom Section */}
             <div className="flex flex-col md:flex-row gap-12 mt-4">
-              {/* Left text */}
               <div className="flex-1 flex items-start gap-4 text-sm font-medium text-white/90">
                 <input 
                   type="checkbox" 
@@ -172,7 +161,6 @@ const Contact = () => {
                 </label>
               </div>
 
-              {/* Right text & button */}
               <div className="flex-1 flex flex-col gap-8 text-xs text-white/70 font-medium">
                 <p className="leading-relaxed max-w-[400px]">
                   Your message will be sent directly to my inbox. I typically respond within 24-48 hours.
@@ -192,7 +180,7 @@ const Contact = () => {
                         ? 'bg-green-600 border-green-500 text-white shadow-[0_0_20px_rgba(22,163,74,0.4)]'
                         : status === 'error'
                         ? 'bg-red-800 border-red-700 text-white'
-                        : 'hover:bg-white hover:text-[#ff2a2a]'
+                        : 'hover:bg-white hover:text-violet-700'
                     }`}
                   >
                     {status === 'sending' ? (

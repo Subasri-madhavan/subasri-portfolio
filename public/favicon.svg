@@ -1,9 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <!-- Background -->
-  <rect x="56" y="56" width="400" height="400" rx="72" fill="#FF0000"></rect>
+  <defs>
+    <linearGradient id="violetBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A2A85"></stop>
+      <stop offset="100%" stop-color="#2E1A5C"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded Square -->
+  <rect x="56" y="56" width="400" height="400" rx="72" fill="url(#violetBg)"></rect>
 
   <!-- Letter S -->
-  <text x="256" y="322" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="250" font-weight="900" fill="#FFFFFF">
+  <text x="256" y="318" text-anchor="middle" dominant-baseline="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="245" font-weight="900" fill="#FFFFFF">
     S
   </text>
 </svg>
