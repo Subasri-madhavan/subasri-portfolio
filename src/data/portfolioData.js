@@ -192,7 +192,7 @@ export const projects = [
     description:
       "Billing and bed management modules built for SSS Super Speciality Hospital, handling business logic and database integration in a .NET developer environment.",
     techTags: ["C#", ".NET WinUI 3", "MySQL"],
-    links: {},
+    links: {github: "https://github.com/Subasri-madhavan/hospital-billing-bed-management"},
     isFlagship: false,
   },
   {
@@ -203,7 +203,7 @@ export const projects = [
     description:
       "The Wind Master module for a Windmill Management System, built to handle core business logic and data operations.",
     techTags: ["C#", ".NET WinUI 3", "MySQL"],
-    links: {},
+    links: {github: "https://github.com/Subasri-madhavan/windmill-management-system"},
     isFlagship: false,
   },
   {
@@ -214,7 +214,7 @@ export const projects = [
     description:
       "A Purchase Management module developed for a Jewellery Management System, covering business logic and database integration.",
     techTags: ["C#", ".NET WinUI 3", "MySQL"],
-    links: {},
+    links: {github: "https://github.com/Subasri-madhavan/jewellery-purchase-management"},
     isFlagship: false,
   },
 ];
